@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'certificates.apps.CertificatesConfig',
     'services.apps.ServicesConfig',
     'promotions.apps.PromotionsConfig',
+    'vacancies.apps.VacanciesConfig',
     'rest_framework',
 ]
 
