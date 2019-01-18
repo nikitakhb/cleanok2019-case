@@ -38,8 +38,7 @@ class WorkItem(models.Model):
     """
         Модель "Пункт работ"
     """
-
-    service = models.ForeignKey(Service, on_delete=models.CASCADE, verbose_name='Услуга')
+    service = models.ForeignKey(Service, on_delete=models.CASCADE, verbose_name='Услуга', related_name='items')
     name = models.CharField('Наименование пункта', max_length=128)
 
     def __str__(self):

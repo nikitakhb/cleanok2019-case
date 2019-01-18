@@ -15,9 +15,9 @@ class WorkItemSerializer(serializers.ModelSerializer):
 
 
 class ServiceSerializer(serializers.ModelSerializer):
-    work_items = WorkItemSerializer(many=True, read_only=True)
+    items = WorkItemSerializer(many=True, read_only=True)
     category = ServiceCategorySerializer(many=False, read_only=True)
 
     class Meta:
         model = Service
-        fields = ('id', 'category', 'name', 'description', 'min_price', 'work_items')
+        fields = ('id', 'category', 'name', 'description', 'min_price', 'items')
