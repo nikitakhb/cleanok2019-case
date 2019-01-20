@@ -5,5 +5,5 @@ from .models import News
 @admin.register(News)
 class NewsAdmin(admin.ModelAdmin):
     """Админка для раздела Новости"""
-    list_display = ['title', 'author', 'published_date']
-    list_filter = ['author', 'published_date']
+    list_display = ['title', 'published_date']
+    list_filter = ['published_date']

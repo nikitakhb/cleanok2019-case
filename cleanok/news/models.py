@@ -4,8 +4,6 @@ from django.utils import timezone
 
 class News(models.Model):
     """Новости"""
-    author = models.ForeignKey(
-        'auth.User', on_delete=models.PROTECT, verbose_name="Автор")
     title = models.CharField(max_length=64, verbose_name="Заголовок")
     text = models.TextField(verbose_name="Содержание")
     created_date = models.DateTimeField(
@@ -21,6 +19,6 @@ class News(models.Model):
         return self.title
 
     class Meta:
-        ordering = ['created_date', 'published_date', 'author']
+        ordering = ['created_date', 'published_date']
         verbose_name = "Новость"
         verbose_name_plural = "Новости"

@@ -17,7 +17,7 @@ class Album(models.Model):
 
 class Picture(models.Model):
     album = models.ForeignKey(
-        Album, verbose_name="Альбом", related_name="albums", on_delete=models.CASCADE)
+        Album, verbose_name="Альбом", related_name="pictures", on_delete=models.CASCADE)
     title = models.CharField("Название", max_length=20)
     picture = models.ImageField(
         "Фотография", upload_to='images/', blank=True)
