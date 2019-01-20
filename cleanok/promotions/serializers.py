@@ -9,8 +9,14 @@ class DateField(serializers.RelatedField):
 
 
 class PromotionSerializer(serializers.ModelSerializer):
-    date_publication = DateField(many=False, read_only=True)
+    date = DateField(source='date_publication', many=False, read_only=True)
+    title = serializers.CharField(source='name')
+    preview = serializers.CharField(source='description')
+    text = serializers.SerializerMethodField('get_empty_text')
 
     class Meta:
         model = Promotion
-        fields = ('id', 'name', 'description', 'date_publication')
+        fields = ('id', 'date', 'title', 'preview', 'text')
+
+    def get_empty_text(self, obj):
+        return ''

@@ -2,26 +2,17 @@ from .models import *
 from rest_framework import serializers
 
 
-class VacancyField(serializers.RelatedField):
-
-    def to_representation(self, value):
-        return {
-            'id': value.id,
-            'name': value.name
-        }
-
-
-class CitySerializer(serializers.ModelSerializer):
-    vacancies = VacancyField(many=True, read_only=True)
-
-    class Meta:
-        model = City
-        fields = ('id', 'name', 'vacancies')
-
-
 class VacancySerializer(serializers.ModelSerializer):
-    cities = CitySerializer(many=True, read_only=True)
+    # cities = CitySerializer(many=True, read_only=True)
+    job = serializers.CharField(source='name')
+    loc = serializers.SerializerMethodField('get_alternative_loc')
+    req = serializers.CharField(source='requirements')
+    resp = serializers.CharField(source='main_responsibilities')
+    cond = serializers.CharField(source='condition')
 
     class Meta:
         model = Vacancy
-        fields = ('id', 'name', 'cities', 'requirements', 'main_responsibilities',)
+        fields = ('id', 'job', 'loc', 'req', 'resp', 'cond', 'contact')
+
+    def get_alternative_loc(self, obj):
+        return ''.join([f'{city.name}; ' for city in obj.cities.all()])[:-2]

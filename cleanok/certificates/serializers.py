@@ -2,20 +2,16 @@ from .models import *
 from rest_framework import serializers
 
 
-class ImageField(serializers.RelatedField):
-
+class UrlField(serializers.RelatedField):
     def to_representation(self, value):
-        return {
-            'url': value.url,
-            'height': value.height,
-            'width': value.width
-        }
+        return value.url
 
 
 class CertificateSerializer(serializers.ModelSerializer):
-
-    image = ImageField(many=False, read_only=True)
+    url = UrlField(source='image', many=False, read_only=True)
+    title = serializers.CharField(source='name')
+    subt = serializers.CharField(source='company')
 
     class Meta:
         model = Certificate
-        fields = ('id', 'name', 'company', 'image')
+        fields = ('url', 'title', 'subt')

@@ -7,12 +7,18 @@ from .serializers import *
 
 # Create your views here.
 
-class ServiceCategoryViewSet(viewsets.ModelViewSet):
+class ServiceCategory_DetailsViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
     queryset = ServiceCategory.objects.all()
     serializer_class = ServiceCategorySerializer
+    permission_classes = [IsAuthenticatedOrReadOnly]
+
+
+class ServiceCategory_ListViewSet(viewsets.ModelViewSet):
+    queryset = ServiceCategory.objects.all()
+    serializer_class = ServiceListSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
 
 

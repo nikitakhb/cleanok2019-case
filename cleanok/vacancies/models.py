@@ -19,6 +19,8 @@ class Vacancy(models.Model):
     cities = models.ManyToManyField(City, related_name='vacancies', verbose_name='Города')
     requirements = models.TextField('Требования', max_length=1024)
     main_responsibilities = models.TextField('Основные обязанности', max_length=2048)
+    condition = models.TextField('Условия', max_length=1024)
+    contact = models.CharField('Контактные данные', max_length=32)
 
     class Meta:
         verbose_name = 'Вакансия'

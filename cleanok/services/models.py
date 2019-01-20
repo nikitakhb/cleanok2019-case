@@ -8,6 +8,7 @@ class ServiceCategory(models.Model):
         Модель "Категория услуг"
     """
     name = models.CharField('Наименование категории', max_length=32)
+    url_link = models.CharField('Ссылка', max_length=32)
 
     def __str__(self):
         return self.name
@@ -21,7 +22,8 @@ class Service(models.Model):
     """
         Модель "Услуга"
     """
-    category = models.ForeignKey(ServiceCategory, on_delete=models.CASCADE, verbose_name='Категория услуги')
+    category = models.ForeignKey(ServiceCategory, on_delete=models.CASCADE, verbose_name='Категория услуги',
+                                 related_name='services')
     name = models.CharField('Наименование услуги', max_length=32)
     description = models.TextField('Краткое описание', max_length=512)
     min_price = models.FloatField('Минимальная стоимость')

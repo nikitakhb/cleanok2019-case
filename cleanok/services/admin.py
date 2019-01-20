@@ -7,7 +7,7 @@ from .models import *
 @admin.register(ServiceCategory)
 class ServiceCategoryAdmin(admin.ModelAdmin):
     list_display = ('name',)
-    search_fields = ['name']
+    search_fields = ['name', 'url_link']
     ordering = ('name',)
 
 
