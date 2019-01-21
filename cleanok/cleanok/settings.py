@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'promotions.apps.PromotionsConfig',
     'vacancies.apps.VacanciesConfig',
     'rest_framework',
+    'news',
+    'galery',
+    'recomend',
 ]
 
 REST_FRAMEWORK = {
@@ -116,7 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru-RU'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Vladivostok'
 
 USE_I18N = True
 
