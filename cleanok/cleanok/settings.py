@@ -42,9 +42,10 @@ INSTALLED_APPS = [
     'promotions.apps.PromotionsConfig',
     'vacancies.apps.VacanciesConfig',
     'rest_framework',
-    'news',
-    'galery',
-    'recomend',
+    'news.apps.NewsConfig',
+    'galery.apps.GaleryConfig',
+    'recomend.apps.RecomendConfig',
+    'benefits.apps.BenefitsConfig'
 ]
 
 REST_FRAMEWORK = {
