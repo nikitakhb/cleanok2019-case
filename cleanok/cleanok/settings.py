@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'news',
     'galery',
     'recomend',
+    'partners.apps.PartnersConfig',
 ]
 
 REST_FRAMEWORK = {
