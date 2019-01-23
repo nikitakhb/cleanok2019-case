@@ -46,6 +46,9 @@ INSTALLED_APPS = [
     'galery.apps.GaleryConfig',
     'recomend.apps.RecomendConfig',
     'benefits.apps.BenefitsConfig'
+    'partners.apps.PartnersConfig',
+    'advices.apps.AdvicesConfig',
+    'url_or_relative_url_field',
 ]
 
 REST_FRAMEWORK = {
