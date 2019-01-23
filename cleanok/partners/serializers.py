@@ -9,8 +9,8 @@ class PartnerSerializer(serializers.ModelSerializer):
 
 
 class PartnerCategorySerializer(serializers.ModelSerializer):
-    partners = PartnerSerializer(many=True, read_only=True)
+    list = PartnerSerializer(source='partners', many=True, read_only=True)
 
     class Meta:
         model = PartnerCategory
-        fields = ('name', 'partners')
+        fields = ('name', 'list')
