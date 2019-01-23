@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'news',
     'galery',
     'recomend',
+    'advices.apps.AdvicesConfig',
+    'url_or_relative_url_field',
 ]
 
 REST_FRAMEWORK = {
