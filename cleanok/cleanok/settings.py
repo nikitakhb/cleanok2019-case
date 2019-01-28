@@ -45,9 +45,10 @@ INSTALLED_APPS = [
     'news.apps.NewsConfig',
     'galery.apps.GaleryConfig',
     'recomend.apps.RecomendConfig',
-    'benefits.apps.BenefitsConfig'
+    'benefits.apps.BenefitsConfig',
     'partners.apps.PartnersConfig',
     'advices.apps.AdvicesConfig',
+    'contacts.apps.ContactsConfig',
     'url_or_relative_url_field',
 ]
 
