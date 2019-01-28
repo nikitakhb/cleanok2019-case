@@ -11,4 +11,5 @@ class TypeContactAdmin(admin.ModelAdmin):
 
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
+    list_display = ['type', 'text']
     pass

@@ -14,6 +14,9 @@ class TypeContact(models.Model):
         verbose_name = 'Тип контакта'
         verbose_name_plural = 'Тип контактов'
 
+    def __str__(self):
+        return self.name
+
 
 class Contact(models.Model):
     """
@@ -28,4 +31,5 @@ class Contact(models.Model):
     class Meta:
         verbose_name = 'Контакт'
         verbose_name_plural = 'Контакты'
+
 
