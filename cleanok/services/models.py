@@ -28,6 +28,9 @@ class Service(models.Model):
     description = models.TextField('Краткое описание', max_length=512)
     min_price = models.FloatField('Минимальная стоимость')
 
+    note = models.TextField('Замечание', max_length=1024)
+    warn = models.TextField('Предупреждение', max_length=1024)
+
     def __str__(self):
         return self.name
 
