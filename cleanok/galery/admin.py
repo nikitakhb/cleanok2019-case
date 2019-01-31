@@ -26,8 +26,9 @@ class PictureInline(admin.StackedInline):
 
     def get_edit_link(self, obj=None):
         if obj.pk:
-            url = reverse(f'admin:{obj._meta.app_label}_{obj._meta.model_name}\
-                _change', args=[force_text(obj.pk)])
+            url = reverse(
+                f'admin:{obj._meta.app_label}_{obj._meta.model_name}_change',
+                args=[force_text(obj.pk)])
             text = f'Изменить {obj._meta.verbose_name} в новом окне'
             return mark_safe(f'<a href="{url}">{text}</a>')
         return "ссылка появится после сохранения записи"
