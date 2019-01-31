@@ -1,7 +1,5 @@
 from django.contrib import admin
-from .models import *
-
-# Register your models here.
+from .models import Service, ServiceCategory, WorkItem
 
 
 @admin.register(ServiceCategory)
@@ -22,4 +20,3 @@ class ServiceAdmin(admin.ModelAdmin):
     ordering = ['category', 'name']
     autocomplete_fields = ['category']
     inlines = (WorkItemInline, )
-

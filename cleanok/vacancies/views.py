@@ -1,8 +1,7 @@
-from django.shortcuts import render
-from .models import *
-from rest_framework import viewsets, generics
+from .models import Vacancy
+from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
-from .serializers import *
+from .serializers import VacancySerializer
 
 
 # Create your views here.

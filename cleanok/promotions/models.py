@@ -1,7 +1,5 @@
 from django.db import models
 
-# Create your models here.
-
 
 class Promotion(models.Model):
     name = models.CharField('Название акции', max_length=64)
@@ -14,4 +12,3 @@ class Promotion(models.Model):
     class Meta:
         verbose_name = 'Акция'
         verbose_name_plural = 'Акции'
-

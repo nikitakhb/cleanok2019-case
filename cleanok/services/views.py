@@ -1,11 +1,9 @@
-from django.shortcuts import render
-from .models import *
-from rest_framework import viewsets, generics
+from .models import Service, ServiceCategory, WorkItem
+from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
-from .serializers import *
+from .serializers import ServiceSerializer, ServiceCategorySerializer
+from .serializers import ServiceListSerializer, WorkItemSerializer
 
-
-# Create your views here.
 
 class ServiceCategory_DetailsViewSet(viewsets.ModelViewSet):
     """
