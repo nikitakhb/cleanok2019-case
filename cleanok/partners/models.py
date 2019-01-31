@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class PartnerCategory(models.Model):
     name = models.CharField("Тип партнера", max_length=32)
 
@@ -9,6 +10,7 @@ class PartnerCategory(models.Model):
     class Meta:
         verbose_name = "Тип партнера"
         verbose_name_plural = "Типы партнеров"
+
 
 class Partner(models.Model):
     name = models.CharField("Наименование", max_length=64)

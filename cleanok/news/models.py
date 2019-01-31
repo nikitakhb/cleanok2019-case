@@ -25,6 +25,7 @@ class News(models.Model):
         verbose_name = "Новость"
         verbose_name_plural = "Новости"
 
+
 class NewsRelationship(models.Model):
     from_news = models.ForeignKey('News', related_name='from_news', on_delete=models.CASCADE)
     to_news = models.ForeignKey('News', related_name='to_news', on_delete=models.CASCADE, verbose_name="Новость")

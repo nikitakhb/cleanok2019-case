@@ -1,4 +1,4 @@
-from .models import *
+from .models import Promotion
 from rest_framework import serializers
 
 

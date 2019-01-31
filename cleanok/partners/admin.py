@@ -4,15 +4,19 @@ from django.urls import reverse
 from django.utils.encoding import force_text
 from .models import PartnerCategory, Partner
 
+
 def get_picture_preview(obj):
     if obj.pk:
         src = obj.img.url
         title = obj.name
-        return mark_safe(f'<a href="{src}" target="_blank"><img src="{src}" alt="{title}" style="max-width: 200px; max-height: 200px;" /></a>')
+        return mark_safe(f'<a href="{src}" target="_blank"><img src="{src}"\
+             alt="{title}" style="max-width: 200px; max-height: 200px;" /></a>')
 
     return "(выберите картинку и сохраните для предпросмотра)"
 
+
 get_picture_preview.short_description = "Предпросмотр"
+
 
 class PartnerInline(admin.StackedInline):
     model = Partner
@@ -29,11 +33,13 @@ class PartnerInline(admin.StackedInline):
         return "сохраните и продолжите редактирование для создания ссылки"
     get_edit_link.short_description = "Изменить ссылку"
 
+
 @admin.register(PartnerCategory)
 class PartnerCategoryAdmin(admin.ModelAdmin):
-    list_display = ['name',]
-    fields = ['name']
+    list_display = ['name', ]
+    fields = ['name', ]
     inlines = [PartnerInline]
+
 
 @admin.register(Partner)
 class PartnerAdmin(admin.ModelAdmin):

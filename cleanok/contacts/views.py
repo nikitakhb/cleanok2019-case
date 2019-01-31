@@ -1,9 +1,8 @@
-from django.shortcuts import render
-from rest_framework import viewsets, generics
+from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
-from .serializers import *
+from .serializers import TypeContactSerializer
+from .models import TypeContact
 
-# Create your views here.
 
 class ContactsViewSet(viewsets.ModelViewSet):
     """
@@ -22,4 +21,3 @@ class ContactsViewSet(viewsets.ModelViewSet):
 
         response.data = resp
         return response
-

@@ -7,7 +7,8 @@ def get_picture_preview(obj):
     if obj.pk:
         src = obj.url.url
         title = obj.title
-        return mark_safe(f'<a href="{src}" target="_blank"><img src="{src}" alt="{title}" style="max-width: 200px; max-height: 200px;" /></a>')
+        return mark_safe(f'<a href="{src}" target="_blank"><img src="{src}"\
+             alt="{title}" style="max-width: 200px; max-height: 200px;" /></a>')
 
     return "(выберите картинку и сохраните для предпросмотра)"
 
