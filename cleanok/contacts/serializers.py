@@ -3,9 +3,6 @@ from rest_framework import serializers
 
 
 class TypeContactSerializer(serializers.ModelSerializer):
-    """
-        Я конечно мало понимаю, зачем фронт использует такие словари, но да ладно...
-    """
 
     def to_representation(self, obj):
         resp = {

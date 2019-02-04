@@ -1,5 +1,6 @@
-from .models import Service, WorkItem
 from rest_framework import serializers
+
+from .models import Service, ServiceCategory, WorkItem
 
 
 class ServiceCategorySerializer(serializers.ModelSerializer):
@@ -22,17 +23,12 @@ class ServiceCategorySerializer(serializers.ModelSerializer):
             obj.url_link: resp
         }
 
+    class Meta:
+        model = ServiceCategory
+        fields = ('name', 'url_link')
+
 
 class ServiceListSerializer(serializers.ModelSerializer):
-    # name: 'Уборка помещений',
-    # link: '/uslugi/uborka',
-    # list: {
-    #     '/1': 'Комплексная убока',
-    #     '/2': 'Генеральная убока',
-    #     '/3': 'Поддерживающая убока',
-    #     '/4': 'Уборка после пожара, затопления',
-    #     '/5': 'Уборка после строительства, ремонта, банкетов и т.д.'
-    # }
     def to_representation(self, obj):
         r_list = dict()
         for service in obj.services.all():
@@ -42,6 +38,11 @@ class ServiceListSerializer(serializers.ModelSerializer):
             'link': f'/uslugi/{obj.url_link}',
             'list': r_list
         }
+
+    class Meta:
+        model = Service
+        fields = ('category', 'name', 'description',
+                  'min_price', 'note', 'warn')
 
 
 class WorkItemSerializer(serializers.ModelSerializer):

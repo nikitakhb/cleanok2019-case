@@ -5,6 +5,8 @@ from django.utils.html import mark_safe
 
 @admin.register(Certificate)
 class CertificateAdmin(admin.ModelAdmin):
+    """Model admin for certificates."""
+
     list_display = ('name', 'company')
     ordering = ('company', 'name')
     fields = ('name', 'company', 'image', 'view_image')

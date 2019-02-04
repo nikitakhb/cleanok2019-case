@@ -1,14 +1,14 @@
-from .models import Service, ServiceCategory, WorkItem
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
-from .serializers import ServiceSerializer, ServiceCategorySerializer
+
+from .models import Service, ServiceCategory, WorkItem
+from .serializers import ServiceCategorySerializer, ServiceSerializer
 from .serializers import ServiceListSerializer, WorkItemSerializer
 
 
 class ServiceCategory_DetailsViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows users to be viewed or edited.
-    """
+    """API endpoint that allows users to be viewed or edited."""
+
     queryset = ServiceCategory.objects.all()
     serializer_class = ServiceCategorySerializer
     permission_classes = [IsAuthenticatedOrReadOnly]

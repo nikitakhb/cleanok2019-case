@@ -12,17 +12,17 @@ def get_picture_preview(obj):
         return mark_safe(f'<a href="{src}" target="_blank"><img src="{src}"\
              alt="{title}" style="max-width: 200px; max-height: 200px;" /></a>')
 
-    return "(выберите картинку и сохраните для предпросмотра)"
+    return '(выберите картинку и сохраните для предпросмотра)'
 
 
-get_picture_preview.short_description = "Предпросмотр"
+get_picture_preview.short_description = 'Предпросмотр'
 
 
 class PictureInline(admin.StackedInline):
     model = Picture
     extra = 0
-    fields = ["get_edit_link", "title", "picture", get_picture_preview]
-    readonly_fields = ["get_edit_link", get_picture_preview]
+    fields = ['get_edit_link', 'title', 'picture', get_picture_preview]
+    readonly_fields = ['get_edit_link', get_picture_preview]
 
     def get_edit_link(self, obj=None):
         if obj.pk:
@@ -31,12 +31,14 @@ class PictureInline(admin.StackedInline):
                 args=[force_text(obj.pk)])
             text = f'Изменить {obj._meta.verbose_name} в новом окне'
             return mark_safe(f'<a href="{url}">{text}</a>')
-        return "ссылка появится после сохранения записи"
-    get_edit_link.short_description = "Ссылка"
+        return 'ссылка появится после сохранения записи'
+    get_edit_link.short_description = 'Ссылка'
 
 
 @admin.register(Album)
 class AlbumAdmin(admin.ModelAdmin):
+    """Model admin for albums."""
+
     list_display = ['title', ]
     fields = ['title', 'picture', get_picture_preview]
     readonly_fields = [get_picture_preview]
@@ -45,5 +47,7 @@ class AlbumAdmin(admin.ModelAdmin):
 
 @admin.register(Picture)
 class PictureAdmin(admin.ModelAdmin):
-    fields = ["album", "title", "picture", get_picture_preview]
+    """Model admin for pictures."""
+
+    fields = ['album', 'title', 'picture', get_picture_preview]
     readonly_fields = [get_picture_preview]

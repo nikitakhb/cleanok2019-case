@@ -1,4 +1,7 @@
+"""Recomend views."""
+
 from rest_framework import viewsets
+
 from .models import Recomend
 from .serializers import RecomendSerializer
 

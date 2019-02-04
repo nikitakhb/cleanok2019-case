@@ -36,6 +36,8 @@ class PartnerInline(admin.StackedInline):
 
 @admin.register(PartnerCategory)
 class PartnerCategoryAdmin(admin.ModelAdmin):
+    """Model admin for partners categories."""
+
     list_display = ['name', ]
     fields = ['name', ]
     inlines = [PartnerInline]
@@ -43,5 +45,7 @@ class PartnerCategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Partner)
 class PartnerAdmin(admin.ModelAdmin):
+    """Model admin for partners."""
+
     fields = ['category', 'name', get_picture_preview]
     readonly_fields = [get_picture_preview]

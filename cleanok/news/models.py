@@ -3,7 +3,8 @@ from django.utils import timezone
 
 
 class News(models.Model):
-    """Новости"""
+    """News model."""
+
     title = models.CharField(max_length=64, verbose_name="Заголовок")
     preview = models.TextField(verbose_name="Анонс")
     text = models.TextField(verbose_name="Содержание")
@@ -21,12 +22,16 @@ class News(models.Model):
         return self.title
 
     class Meta:
+        """News model metadata."""
+
         ordering = ['created_date', 'date']
         verbose_name = "Новость"
         verbose_name_plural = "Новости"
 
 
 class NewsRelationship(models.Model):
+    """News relationship model."""
+
     from_news = models.ForeignKey('News', related_name='from_news', on_delete=models.CASCADE)
     to_news = models.ForeignKey('News', related_name='to_news', on_delete=models.CASCADE, verbose_name="Новость")
 
@@ -34,6 +39,7 @@ class NewsRelationship(models.Model):
         return str(self.to_news)
 
     class Meta:
+        """News relationship model metadata."""
         unique_together = ('from_news', 'to_news')
         verbose_name = "Читайте также"
         verbose_name_plural = "Читайте также"

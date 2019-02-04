@@ -1,3 +1,5 @@
+"""News application models."""
+
 from django.contrib import admin
 from .models import News, NewsRelationship
 
@@ -11,7 +13,8 @@ class RelatedNewsInline(admin.StackedInline):
 
 @admin.register(News)
 class NewsAdmin(admin.ModelAdmin):
-    """Админка для раздела Новости"""
+    """Model admin for news."""
+
     list_display = ['title', 'date']
     list_filter = ['date']
     inlines = [RelatedNewsInline]
