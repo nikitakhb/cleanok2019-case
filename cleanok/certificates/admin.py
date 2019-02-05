@@ -1,6 +1,7 @@
 from django.contrib import admin
-from .models import Certificate
 from django.utils.html import mark_safe
+
+from .models import Certificate
 
 
 @admin.register(Certificate)

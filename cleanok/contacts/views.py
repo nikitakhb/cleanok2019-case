@@ -1,13 +1,13 @@
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
+
 from .serializers import TypeContactSerializer
 from .models import TypeContact
 
 
 class ContactsViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows users to be viewed or edited.
-    """
+    """API endpoint that returns contacts."""
+
     queryset = TypeContact.objects.all()
     serializer_class = TypeContactSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]

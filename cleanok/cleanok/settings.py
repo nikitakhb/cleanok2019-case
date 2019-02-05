@@ -1,6 +1,7 @@
 """Django settings for cleanok project."""
 
 import os
+
 from corsheaders.defaults import default_headers, default_methods
 from decouple import config, Csv
 from dj_database_url import parse as db_url
@@ -49,7 +50,9 @@ INSTALLED_APPS = [
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
-    )
+    ),
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 10
 }
 
 MIDDLEWARE = [

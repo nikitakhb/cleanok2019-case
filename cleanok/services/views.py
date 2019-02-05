@@ -7,7 +7,7 @@ from .serializers import ServiceListSerializer, WorkItemSerializer
 
 
 class ServiceCategory_DetailsViewSet(viewsets.ModelViewSet):
-    """API endpoint that allows users to be viewed or edited."""
+    """API endpoint that returns service categorie details."""
 
     queryset = ServiceCategory.objects.all()
     serializer_class = ServiceCategorySerializer
@@ -15,18 +15,24 @@ class ServiceCategory_DetailsViewSet(viewsets.ModelViewSet):
 
 
 class ServiceCategory_ListViewSet(viewsets.ModelViewSet):
+    """API endpoint that returns services categories."""
+
     queryset = ServiceCategory.objects.all()
     serializer_class = ServiceListSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
 
 
 class ServiceViewSet(viewsets.ModelViewSet):
+    """API endpoint that returns serivce."""
+
     queryset = Service.objects.all()
     serializer_class = ServiceSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
 
 
 class WorkItemViewSer(viewsets.ModelViewSet):
+    """API endpoint that returns work items."""
+
     queryset = WorkItem.objects.all()
     serializer_class = WorkItemSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]

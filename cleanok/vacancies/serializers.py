@@ -4,6 +4,8 @@ from .models import Vacancy
 
 
 class VacancySerializer(serializers.ModelSerializer):
+    """Vacancy serializer."""
+
     job = serializers.CharField(source='name')
     loc = serializers.SerializerMethodField('get_alternative_loc')
     req = serializers.CharField(source='requirements')
@@ -11,7 +13,7 @@ class VacancySerializer(serializers.ModelSerializer):
     cond = serializers.CharField(source='condition')
 
     class Meta:
-        """Vacancy API fields."""
+        """Vacancy serializer fields."""
 
         model = Vacancy
         fields = ('id', 'job', 'loc', 'req', 'resp', 'cond', 'contact')

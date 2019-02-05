@@ -1,9 +1,9 @@
 """Recomend admin."""
 
+from .models import Recomend
+
 from django.contrib import admin
 from django.utils.safestring import mark_safe
-
-from .models import Recomend
 
 
 def get_picture_preview(obj):
