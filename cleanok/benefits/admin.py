@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
+
 from .models import Benefit
 
 
@@ -18,5 +19,7 @@ get_picture_preview.short_description = "Предпросмотр"
 
 @admin.register(Benefit)
 class BenefitAdmin(admin.ModelAdmin):
+    """Model admin for benefits."""
+
     fields = ['title', 'content', 'img', get_picture_preview]
     readonly_fields = [get_picture_preview]

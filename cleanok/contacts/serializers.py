@@ -1,11 +1,10 @@
 from .models import Contact
+
 from rest_framework import serializers
 
 
 class TypeContactSerializer(serializers.ModelSerializer):
-    """
-        Я конечно мало понимаю, зачем фронт использует такие словари, но да ладно...
-    """
+    """TypeContact serializer."""
 
     def to_representation(self, obj):
         resp = {
@@ -23,5 +22,7 @@ class TypeContactSerializer(serializers.ModelSerializer):
         return obj.eng_name, resp
 
     class Meta:
+        """TypeContact serializer fields."""
+
         model = Contact
         fields = ('text', 'type')
