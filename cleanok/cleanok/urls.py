@@ -1,9 +1,9 @@
 """Cleanok URL configuration."""
 
-from django.conf import settings
 from django.conf.urls.static import static
-from django.contrib import admin
+from django.conf import settings
 from django.urls import include, path
+from django.contrib import admin
 
 
 urlpatterns = [
@@ -11,7 +11,7 @@ urlpatterns = [
     path('news/', include('news.urls')),
     path('recomends/', include('recomend.urls')),
     path('galery/', include('galery.urls')),
-    path('promotions/', include('promotions.urls')),
+    path('promo/', include('promo.urls')),
     path('services/', include('services.urls')),
     path('certificates/', include('certificates.urls')),
     path('vacancies/', include('vacancies.urls')),

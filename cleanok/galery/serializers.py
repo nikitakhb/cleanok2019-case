@@ -10,7 +10,7 @@ class PictureSerializer(serializers.ModelSerializer):
         """Picture serializer fields."""
 
         model = Picture
-        fields = ('title', 'picture')
+        fields = ('title', 'img')
 
 
 class AlbumSerializer(serializers.ModelSerializer):
@@ -22,4 +22,4 @@ class AlbumSerializer(serializers.ModelSerializer):
         """Album serializer fields."""
 
         model = Album
-        fields = ('title', 'picture', 'pictures')
+        fields = ('title', 'cover', 'pictures')

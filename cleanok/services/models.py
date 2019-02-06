@@ -20,7 +20,7 @@ class ServiceCategory(models.Model):
 
 
 class Service(models.Model):
-    """Service model"""
+    """Service model."""
 
     category = models.ForeignKey(ServiceCategory, on_delete=models.CASCADE,
                                  verbose_name='Категория услуги',

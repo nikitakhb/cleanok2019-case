@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils import timezone
 
 
 class News(models.Model):
@@ -16,7 +15,7 @@ class News(models.Model):
                                      symmetrical=False, blank=True)
 
     def publish(self):
-        self.date = timezone.now()
+        self.date = models.DateTimeField(auto_now_add=True, blank=True)
         self.save()
 
     def __str__(self):
@@ -43,6 +42,7 @@ class NewsRelationship(models.Model):
 
     class Meta:
         """News relationship model metadata."""
+
         unique_together = ('from_news', 'to_news')
         verbose_name = 'Читайте также'
         verbose_name_plural = 'Читайте также'

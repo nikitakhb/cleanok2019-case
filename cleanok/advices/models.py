@@ -12,6 +12,8 @@ class Advice(models.Model):
     link = URLOrRelativeURLField('Ссылка')
 
     def __str__(self):
+        """Return advice string representation."""
+
         return self.title
 
     class Meta:

@@ -6,6 +6,7 @@ from .models import Contact, TypeContact
 @admin.register(TypeContact)
 class TypeContactAdmin(admin.ModelAdmin):
     """Model admin for contacts types."""
+
     pass
 
 
@@ -13,5 +14,5 @@ class TypeContactAdmin(admin.ModelAdmin):
 class ContactAdmin(admin.ModelAdmin):
     """Model admin for contacts."""
 
-    list_display = ['type', 'text']
+    list_display = ('type', 'text',)
     pass

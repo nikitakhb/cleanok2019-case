@@ -12,17 +12,17 @@ def get_picture_preview(obj):
         return mark_safe(f'<a href="{src}" target="_blank"><img src="{src}"\
              alt="{title}" style="max-width: 200px; max-height: 200px;" /></a>')
 
-    return "(выберите картинку и сохраните для предпросмотра)"
+    return '(выберите картинку и сохраните для предпросмотра)'
 
 
-get_picture_preview.short_description = "Предпросмотр"
+get_picture_preview.short_description = 'Предпросмотр'
 
 
 class PartnerInline(admin.StackedInline):
     model = Partner
     extra = 0
-    fields = ['get_edit_link', 'name', 'img', get_picture_preview]
-    readonly_fields = ["get_edit_link", get_picture_preview]
+    fields = ('get_edit_link', 'name', 'img', get_picture_preview,)
+    readonly_fields = ('get_edit_link', get_picture_preview,)
 
     def get_edit_link(self, obj=None):
         if obj.pk:
@@ -30,22 +30,22 @@ class PartnerInline(admin.StackedInline):
                           force_text(obj.pk)])
             text = f'Редактировать в отдельном окне'
             return mark_safe(f'<a href="{url}">{text}</a>')
-        return "сохраните и продолжите редактирование для создания ссылки"
-    get_edit_link.short_description = "Изменить ссылку"
+        return 'сохраните и продолжите редактирование для создания ссылки'
+    get_edit_link.short_description = 'Изменить ссылку'
 
 
 @admin.register(PartnerCategory)
 class PartnerCategoryAdmin(admin.ModelAdmin):
     """Model admin for partners categories."""
 
-    list_display = ['name', ]
-    fields = ['name', ]
-    inlines = [PartnerInline]
+    list_display = ('name', )
+    fields = ('name', )
+    inlines = (PartnerInline,)
 
 
 @admin.register(Partner)
 class PartnerAdmin(admin.ModelAdmin):
     """Model admin for partners."""
 
-    fields = ['category', 'name', get_picture_preview]
-    readonly_fields = [get_picture_preview]
+    fields = ('category', 'name', get_picture_preview,)
+    readonly_fields = (get_picture_preview,)

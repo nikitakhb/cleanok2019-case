@@ -1,9 +1,11 @@
+"""Galery URL configuration."""
+
 from django.urls import include, path
-from rest_framework import routers
 from galery import views
+from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register(r'albums', views.ListAlbumsView)
+router.register(r'', views.ListAlbumsView)
 router.register(r'pictures', views.ListPicturesView)
 
 urlpatterns = [

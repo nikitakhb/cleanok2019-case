@@ -7,7 +7,7 @@ class Album(models.Model):
     """Album model."""
 
     title = models.CharField('Название', max_length=20)
-    picture = models.ImageField(
+    cover = models.ImageField(
         'Обложка', upload_to='images/', blank=True)
 
     class Meta:
@@ -19,7 +19,6 @@ class Album(models.Model):
 
     def __str__(self):
         """Represent album as a string."""
-
         return self.title
 
 
@@ -29,7 +28,7 @@ class Picture(models.Model):
     album = models.ForeignKey(
         Album, verbose_name='Альбом', related_name='pictures', on_delete=models.CASCADE)
     title = models.CharField('Название', max_length=20)
-    picture = models.ImageField(
+    img = models.ImageField(
         'Фотография', upload_to='images/', blank=True)
 
     class Meta:
@@ -41,5 +40,4 @@ class Picture(models.Model):
 
     def __str__(self):
         """Represent picture as a string."""
-
         return self.title
