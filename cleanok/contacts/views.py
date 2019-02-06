@@ -15,9 +15,7 @@ class ContactsViewSet(viewsets.ModelViewSet):
     def list(self, request, *args, **kwargs):
         response = super(ContactsViewSet, self).list(request, *args, **kwargs)
         resp = {}
-        for key, value in response.data:
-            print(f'[{key}] = {value}')
+        for key, value in response.data['results']:
             resp[key] = value
-
-        response.data = resp
+        response.data['results'] = resp
         return response
