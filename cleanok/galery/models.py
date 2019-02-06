@@ -19,7 +19,6 @@ class Album(models.Model):
 
     def __str__(self):
         """Represent album as a string."""
-
         return self.title
 
 
@@ -41,5 +40,4 @@ class Picture(models.Model):
 
     def __str__(self):
         """Represent picture as a string."""
-
         return self.title

@@ -1,6 +1,6 @@
 from django.contrib import admin
-from django.utils.safestring import mark_safe
 from django.urls import reverse
+from django.utils.safestring import mark_safe
 from django.utils.encoding import force_text
 
 from .models import Album, Picture

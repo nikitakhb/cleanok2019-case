@@ -27,6 +27,7 @@ class ServiceCategorySerializer(serializers.ModelSerializer):
 
     class Meta:
         """Service serializer fields."""
+
         model = ServiceCategory
         fields = ('name', 'url_link')
 

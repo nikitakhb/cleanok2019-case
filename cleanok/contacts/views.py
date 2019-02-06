@@ -1,8 +1,8 @@
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
-from .serializers import TypeContactSerializer
 from .models import TypeContact
+from .serializers import TypeContactSerializer
 
 
 class ContactsViewSet(viewsets.ModelViewSet):

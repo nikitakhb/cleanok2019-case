@@ -24,4 +24,4 @@ class CertificateAdmin(admin.ModelAdmin):
                          f'background-position: center;"></div>'
                          f'</a>')
 
-    view_image.short_description = "Предпросмотр изображения"
+    view_image.short_description = 'Предпросмотр изображения'

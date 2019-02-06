@@ -1,4 +1,4 @@
-"""Services views."""
+"""Services URL configuration."""
 
 from django.urls import include, path
 from rest_framework import routers

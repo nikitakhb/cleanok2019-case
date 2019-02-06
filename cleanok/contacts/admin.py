@@ -6,6 +6,7 @@ from .models import Contact, TypeContact
 @admin.register(TypeContact)
 class TypeContactAdmin(admin.ModelAdmin):
     """Model admin for contacts types."""
+
     pass
 
 

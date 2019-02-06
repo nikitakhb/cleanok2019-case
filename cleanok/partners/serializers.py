@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import PartnerCategory, Partner
+from .models import Partner, PartnerCategory
 
 
 class PartnerSerializer(serializers.ModelSerializer):

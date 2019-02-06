@@ -5,4 +5,4 @@ class PartnersConfig(AppConfig):
     """Partners config."""
 
     name = 'partners'
-    verbose_name = "Партнеры"
+    verbose_name = 'Партнеры'

@@ -11,10 +11,10 @@ def get_picture_preview(obj):
         return mark_safe(f'<a href="{src}" target="_blank"><img src="{src}"\
              alt="{title}" style="max-width: 200px; max-height: 200px;" /></a>')
 
-    return "(выберите картинку и сохраните для предпросмотра)"
+    return '(выберите картинку и сохраните для предпросмотра)'
 
 
-get_picture_preview.short_description = "Предпросмотр"
+get_picture_preview.short_description = 'Предпросмотр'
 
 
 @admin.register(Benefit)

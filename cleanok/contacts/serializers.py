@@ -25,4 +25,4 @@ class TypeContactSerializer(serializers.ModelSerializer):
         """TypeContact serializer fields."""
 
         model = Contact
-        fields = ('text', 'type')
+        fields = ('text', 'type',)
