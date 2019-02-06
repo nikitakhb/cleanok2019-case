@@ -21,5 +21,5 @@ get_picture_preview.short_description = "Предпросмотр"
 class BenefitAdmin(admin.ModelAdmin):
     """Model admin for benefits."""
 
-    fields = ['title', 'content', 'img', get_picture_preview]
-    readonly_fields = [get_picture_preview]
+    fields = ('title', 'content', 'img', get_picture_preview,)
+    readonly_fields = (get_picture_preview,)

@@ -8,9 +8,9 @@ from .models import Certificate
 class CertificateAdmin(admin.ModelAdmin):
     """Model admin for certificates."""
 
-    list_display = ('name', 'company')
-    ordering = ('company', 'name')
-    fields = ('name', 'company', 'image', 'view_image')
+    list_display = ('name', 'company',)
+    ordering = ('company', 'name',)
+    fields = ('name', 'company', 'image', 'view_image',)
     readonly_fields = ('view_image',)
 
     def view_image(self, obj):

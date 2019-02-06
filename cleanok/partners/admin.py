@@ -38,14 +38,14 @@ class PartnerInline(admin.StackedInline):
 class PartnerCategoryAdmin(admin.ModelAdmin):
     """Model admin for partners categories."""
 
-    list_display = ['name', ]
-    fields = ['name', ]
-    inlines = [PartnerInline]
+    list_display = ('name', )
+    fields = ('name', )
+    inlines = (PartnerInline,)
 
 
 @admin.register(Partner)
 class PartnerAdmin(admin.ModelAdmin):
     """Model admin for partners."""
 
-    fields = ['category', 'name', get_picture_preview]
-    readonly_fields = [get_picture_preview]
+    fields = ('category', 'name', get_picture_preview,)
+    readonly_fields = (get_picture_preview,)

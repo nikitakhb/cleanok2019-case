@@ -24,5 +24,5 @@ get_picture_preview.short_description = 'Предпросмотр'
 class RecomendAdmin(admin.ModelAdmin):
     """Model admin for recomends."""
 
-    fields = ['title', 'subt', 'url', get_picture_preview]
-    readonly_fields = [get_picture_preview]
+    fields = ('title', 'subt', 'url', get_picture_preview,)
+    readonly_fields = (get_picture_preview,)

@@ -33,7 +33,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'certificates.apps.CertificatesConfig',
     'services.apps.ServicesConfig',
-    'promotions.apps.PromotionsConfig',
+    'promo.apps.PromoConfig',
     'vacancies.apps.VacanciesConfig',
     'rest_framework',
     'news.apps.NewsConfig',

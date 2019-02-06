@@ -16,7 +16,7 @@ class News(models.Model):
                                      symmetrical=False, blank=True)
 
     def publish(self):
-        self.date = timezone.now()
+        self.date = models.DateTimeField(auto_now_add=True, blank=True)
         self.save()
 
     def __str__(self):

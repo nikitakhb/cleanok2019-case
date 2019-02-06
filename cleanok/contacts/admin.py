@@ -13,5 +13,5 @@ class TypeContactAdmin(admin.ModelAdmin):
 class ContactAdmin(admin.ModelAdmin):
     """Model admin for contacts."""
 
-    list_display = ['type', 'text']
+    list_display = ('type', 'text',)
     pass
