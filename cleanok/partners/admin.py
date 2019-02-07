@@ -47,5 +47,5 @@ class PartnerCategoryAdmin(admin.ModelAdmin):
 class PartnerAdmin(admin.ModelAdmin):
     """Model admin for partners."""
 
-    fields = ('category', 'name', get_picture_preview,)
+    fields = ('category', 'name', 'img', get_picture_preview,)
     readonly_fields = (get_picture_preview,)
