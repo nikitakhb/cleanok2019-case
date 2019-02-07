@@ -25,7 +25,7 @@ class WorkItemInline(admin.TabularInline):
 class ServiceAdmin(admin.ModelAdmin):
     """Model admin for services."""
 
-    list_display = ('category', 'name',)
+    list_display = ('name', 'category',)
     ordering = ('category', 'name',)
     autocomplete_fields = ('category',)
     inlines = (WorkItemInline, )

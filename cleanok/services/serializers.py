@@ -16,7 +16,7 @@ class ServiceCategorySerializer(serializers.ModelSerializer):
             resp[service.id] = {
                 'title': service.name,
                 'desc': service.description,
-                'cont': [item.name for item in service.items.all()],
+                'cont': [item.name for item in service.items.order_by('id').all()],
                 'price': service.min_price,
                 'note': service.note,
                 'warn': service.warn,
