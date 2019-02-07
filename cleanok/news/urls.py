@@ -6,7 +6,7 @@ from rest_framework import routers
 from news import views
 
 router = routers.DefaultRouter()
-router.register('', views.ListNewsView)
+router.register('', views.NewsViewSet)
 
 urlpatterns = [
     path('', include(router.urls))
