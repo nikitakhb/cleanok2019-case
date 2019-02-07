@@ -26,11 +26,11 @@ class Service(models.Model):
                                  verbose_name='Категория услуги',
                                  related_name='services')
     name = models.CharField('Наименование услуги', max_length=32)
-    description = models.TextField('Краткое описание', max_length=512)
-    min_price = models.FloatField('Минимальная стоимость')
+    description = models.TextField('Краткое описание', max_length=512, blank=True)
+    min_price = models.CharField('Минимальная стоимость', max_length=32)
 
-    note = models.TextField('Замечание', max_length=1024)
-    warn = models.TextField('Предупреждение', max_length=1024)
+    note = models.TextField('Замечание', max_length=1024, blank=True)
+    warn = models.TextField('Предупреждение', max_length=1024, blank=True)
 
     def __str__(self):
         return self.name
