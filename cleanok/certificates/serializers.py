@@ -3,19 +3,13 @@ from rest_framework import serializers
 from .models import Certificate
 
 
-class UrlField(serializers.RelatedField):
-    """UrlField serializer."""
-
-    def to_representation(self, value):
-        return value.url
-
-
 class CertificateSerializer(serializers.ModelSerializer):
     """Certificate serializer."""
 
-    url = UrlField(source='image', many=False, read_only=True)
+    #url = UrlField(source='image', many=False, read_only=True)
     title = serializers.CharField(source='name')
     subt = serializers.CharField(source='company')
+    url = serializers.ImageField(source='image')
 
     class Meta:
         """Certificate serializer fields."""

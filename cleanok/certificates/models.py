@@ -9,7 +9,7 @@ class Certificate(models.Model):
     name = models.CharField('Наименование сертификата', max_length=64)
     company = models.CharField('Наименование компании', max_length=64)
     image = models.ImageField('Изображение',
-                              upload_to='certificates/', blank=True)
+                              upload_to='images/', blank=True)
 
     class Meta:
         """Certificate model metadata."""
