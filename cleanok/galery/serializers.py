@@ -22,4 +22,4 @@ class AlbumSerializer(serializers.ModelSerializer):
         """Album serializer fields."""
 
         model = Album
-        fields = ('title', 'cover', 'pictures')
+        fields = ('id', 'title', 'cover', 'pictures')
