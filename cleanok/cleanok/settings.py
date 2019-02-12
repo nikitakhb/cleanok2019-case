@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'contacts.apps.ContactsConfig',
     'url_or_relative_url_field',
     'corsheaders',
+    'leads.apps.LeadsConfig',
 ]
 
 REST_FRAMEWORK = {
