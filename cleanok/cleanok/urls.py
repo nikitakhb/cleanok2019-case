@@ -19,6 +19,7 @@ urlpatterns = [
     path('partnership/', include('partners.urls')),
     path('advices/', include('advices.urls')),
     path('contacts/', include('contacts.urls')),
+    path('leads/', include('leads.urls')),
 ]
 
 if settings.DEBUG:
