@@ -26,6 +26,7 @@ class Vacancy(models.Model):
     main_responsibilities = models.TextField('Основные обязанности', max_length=2048)
     condition = models.TextField('Условия', max_length=1024)
     contact = models.CharField('Контактные данные', max_length=32)
+    salary = models.CharField('Зарплата', max_length=64)
 
     class Meta:
         """Vacancy metadata."""
