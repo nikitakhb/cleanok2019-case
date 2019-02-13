@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class FeedBack(models.Model):
+class FeedBackMessage(models.Model):
     """ FeedBack model """
     first_name = models.CharField('Имя', max_length=32)
     last_name = models.CharField('Фамилия', max_length=32)
@@ -12,5 +12,5 @@ class FeedBack(models.Model):
         return self.message[:50]
 
     class Meta:
-        verbose_name = 'Обратная связь'
-        verbose_name_plural = 'Обратная связь'
+        verbose_name = 'Сообщение'
+        verbose_name_plural = 'Сообщения'
