@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'url_or_relative_url_field',
     'corsheaders',
     'leads.apps.LeadsConfig',
+    'feedback.apps.FeedbackConfig',
 ]
 
 REST_FRAMEWORK = {

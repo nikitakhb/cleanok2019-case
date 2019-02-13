@@ -16,7 +16,7 @@ class VacancySerializer(serializers.ModelSerializer):
         """Vacancy serializer fields."""
 
         model = Vacancy
-        fields = ('id', 'job', 'loc', 'req', 'resp', 'cond', 'contact')
+        fields = ('id', 'job', 'loc', 'req', 'resp', 'cond', 'contact', 'salary')
 
     def get_alternative_loc(self, obj):
         """Return alternative locations."""
