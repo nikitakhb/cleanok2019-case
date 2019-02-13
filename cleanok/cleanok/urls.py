@@ -20,6 +20,7 @@ urlpatterns = [
     path('advices/', include('advices.urls')),
     path('contacts/', include('contacts.urls')),
     path('leads/', include('leads.urls')),
+    path('feedback/', include('feedback.urls')),
 ]
 
 if settings.DEBUG:
